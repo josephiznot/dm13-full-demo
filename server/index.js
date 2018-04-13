@@ -10,7 +10,8 @@ const { strat, logout, getUser } = require(`${__dirname}/controllers/authCtrl`);
 const {
   getProducts,
   getCart,
-  addToCart
+  addToCart,
+  deleteFromCart
 } = require(`${__dirname}/controllers/productCtrl`);
 
 const port = process.env.PORT || 3001;
@@ -78,6 +79,9 @@ app.get("/api/me", getUser);
 app.get("/api/product", getProducts);
 app.get("/api/cart", getCart);
 app.post("/api/cart/:id", addToCart);
+app.delete("/api/cart/:id", deleteFromCart)
+
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

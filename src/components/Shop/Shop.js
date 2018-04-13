@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { getProducts, addToCart } from "../../ducks/productReducer";
+import { getProducts, addToCart} from "../../ducks/productReducer";
 
 class Shop extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class Shop extends Component {
     this.props.addToCart(id);
   }
   render() {
+    console.log(this.props)
     return (
       <div>
         {this.props.products[0] ? (

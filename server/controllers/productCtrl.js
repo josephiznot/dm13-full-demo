@@ -29,9 +29,17 @@ const addToCart = (req, res) => {
     .then(response => getCart(req, res))
     .catch(err => res.status(500).json(err));
 };
+const deleteFromCart = (req,res)=>{
+  console.log("DELETE")
+  // var {id} = req.user;
+  // req.app.get('db').deleteFromCart(id).then(res=>{
+  //   getCart(req,res);
+  // }).catch(console.log)
+}
 
 module.exports = {
   getProducts,
   getCart,
-  addToCart
+  addToCart,
+  deleteFromCart
 };
